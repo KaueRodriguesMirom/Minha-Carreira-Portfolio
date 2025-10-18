@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Obrigado!</title>
+  <style>
+    body {
+      background-color: #0e0e0e;
+      color: #5BBE42;
+      font-family: 'Montserrat', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 20px;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <h1>✅ Muito obrigado pela mensagem!</h1>
+  <p>Você será redirecionado para a página inicial em 5 segundos...</p>
+
+  <script>
+    setTimeout(function() {
+      window.location.href = "index.html"; // Altere para o link real se estiver hospedado online
+    }, 5000); // 5000 milissegundos = 5 segundos
+  </script>
+</body>
+</html>

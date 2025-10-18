@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Habilidades Técnicas | Kauê Rodrigues Mirom</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Brawler&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #0e0e0e;
+      color: #ffffff;
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px 30px;
+      background-color: #111;
+      border-bottom: 2px solid #5BBE42;
+    }
+
+header h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 49px;
+  color: #5BBE42; /* verde claro */
+  font-weight: 700;
+  -webkit-text-stroke: 0.8px white; /* contorno branco */
+  text-shadow: 1px 1px 3px #000;
+  letter-spacing: 1px;
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+  cursor: default;
+}
+
+h1:hover {
+  transform: scale(1.05);
+  text-shadow: 0 0 12px #5BBE42, 0 0 24px #5BBE42;
+}
+
+    .voltar-btn {
+      display: inline-block;
+      margin: 30px 40px;
+      padding: 12px 24px;
+      background: linear-gradient(135deg, #5BBE42, #4AAE35);
+      color: #000;
+      font-weight: bold;
+      font-size: 18px;
+      text-decoration: none;
+      border-radius: 10px;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .voltar-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 12px #5BBE42;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    section {
+      margin-bottom: 60px;
+      text-align: center;
+      animation: fadeIn 1.2s ease-in;
+    }
+
+    section h3 {
+      font-size: 28px;
+      color: #5BBE42;
+      margin-bottom: 10px;
+    }
+
+    section p {
+      font-size: 18px;
+      color: #ccc;
+      margin-bottom: 30px;
+    }
+
+    .fluxograma-img {
+      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    canvas {
+      margin-top: 20px;
+      max-width: 100%;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 16px;
+      color: #888;
+      border-top: 1px solid #222;
+    }
+
+    #cursos {
+  text-align: center;
+  margin-bottom: 60px;
+  animation: fadeIn 1.2s ease-in;
+}
+
+#cursos h3 {
+  font-size: 28px;
+  color: #5BBE42;
+  margin-bottom: 20px;
+}
+
+.lista-cursos {
+  list-style: none;
+  padding: 0;
+  max-width: 700px;
+  margin: auto;
+}
+
+.lista-cursos li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #1a1a1a;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.lista-cursos li:hover {
+  transform: scale(1.02);
+}
+
+.lista-cursos img {
+  width: 32px;
+  height: 32px;
+  margin-right: 15px;
+}
+
+.nome-curso {
+  flex: 1;
+  text-align: left;
+  font-size: 18px;
+  color: #ccc;
+}
+
+.data-curso {
+  font-size: 14px;
+  color: #888;
+}
+
+  </style>
+</head>
+<body>
+
+  <a href="index.html" class="voltar-btn">← Voltar para a página inicial</a>
+
+  <header>
+    <h1>Habilidades Técnicas</h1>
+  </header>
+
+  <main>
+    <section id="fluxograma">
+      <h3>Fluxograma de Ferramentas</h3>
+      <p>Visualização das principais tecnologias que utilizo em meus projetos e rotinas técnicas.</p>
+      <img src="/fluxograma-habilidades.png" alt="Fluxograma das habilidades técnicas de Kauê Rodrigues" class="fluxograma-img" />
+    </section>
+
+    <section id="habilidades">
+      <h3>Radar de Competências</h3>
+      <p>Representação gráfica dos meus níveis de domínio em diferentes áreas técnicas.</p>
+      <canvas id="graficoHabilidades" width="400" height="400"></canvas>
+    </section>
+
+    <section id="cursos">
+  <h3>Cursos Concluídos</h3>
+  <ul class="lista-cursos">
+    <li>
+      <img src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png" alt="Ícone de certificado" />
+      <span class="nome-curso">Formação Data Analysis witch kibana + Elasticsearch Engineer On-Demand - Elastic</span>
+      <span class="data-curso">Concluído em: Agosto/2025</span>
+    </li>
+    <li>
+      <img src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png" alt="Ícone de certificado" />
+      <span class="nome-curso">Devops: explorando conceitos, comandos e scripts no Linux CLI - Alura</span>
+      <span class="data-curso">Concluído em: Dezembro/2024</span>
+    </li>
+    <li>
+      <img src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png" alt="Ícone de certificado" />
+      <span class="nome-curso">Scrum Foundation Professional Certificate - CertiProf</span>
+      <span class="data-curso">Concluído em: Janeiro/2025</span>
+    </li>
+        <li>
+      <img src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png" alt="Ícone de certificado" />
+      <span class="nome-curso">Programa Jovem Aprendiz Arco administrativo - Vocação</span>
+      <span class="data-curso">Concluído em: Dezembro/2024</span>
+    </li>
+        <li>
+      <img src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png" alt="Ícone de certificado" />
+      <span class="nome-curso">Soft Sklils - Vivae</span>
+      <span class="data-curso">Concluído em: Novembro/2024</span>
+    </li>
+        <li>
+      <img src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png" alt="Ícone de certificado" />
+      <span class="nome-curso">Desenvolvimento Web - Enabley UK & ROI</span>
+      <span class="data-curso">Concluído em: Agosto/2024</span>
+    </li>
+        <li>
+      <img src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png" alt="Ícone de certificado" />
+      <span class="nome-curso">Introdução ás Competências Essenciais para a Carreira de Desenvolvimento de Software - Linkedin</span>
+      <span class="data-curso">Concluído em: Agosto/2024</span>
+    </li>
+        <li>
+      <img src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png" alt="Ícone de certificado" />
+      <span class="nome-curso">Connecting to MongoDB in Python - MongoDB</span>
+      <span class="data-curso">Concluído em: Junho/2024</span>
+    </li>
+        <li>
+      <img src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png" alt="Ícone de certificado" />
+      <span class="nome-curso">Criatividade - Galena</span>
+      <span class="data-curso">Concluído em: Junho/2024</span>
+    </li>
+        <li>
+      <img src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png" alt="Ícone de certificado" />
+      <span class="nome-curso">Fundamentos de TI> HARDWARE E SOFTWARE - Fundação Bradesco</span>
+      <span class="data-curso">Concluído em: Abril/2024</span>
+    </li>
+        <li>
+      <img src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png" alt="Ícone de certificado" />
+      <span class="nome-curso">Práticas de Segurnaça na Proteção da informação - Telefónia Tech</span>
+      <span class="data-curso">Concluído em: Abril/2024</span>
+    </li>
+  </ul>
+</section>
+
+  </main>
+
+  <footer>
+    &copy; 2025 Kauê Rodrigues Mirom. Todos os direitos reservados.
+  </footer>
+
+  <script>
+    const ctx = document.getElementById('graficoHabilidades').getContext('2d');
+    new Chart(ctx, {
+      type: 'radar',
+      data: {
+        labels: [
+          'HTML', 'CSS', 'JavaScript', 'Python', 'SQL', 'Infraestrutura',
+          'GitHub', 'ServiceNow', 'Zabbix', 'Elastic', 'Scrum/Kanban', 'Linux'
+        ],
+        datasets: [{
+          label: 'Nível de Habilidade',
+          data: [9, 8, 7, 10, 5, 10, 6, 8, 7, 4, 3, 5],
+          backgroundColor: 'rgba(91, 190, 66, 0.2)',
+          borderColor: '#5BBE42',
+          pointBackgroundColor: '#5BBE42',
+          borderWidth: 2
+        }]
+      },
+      options: {
+        animation: {
+          duration: 1500,
+          easing: 'easeOutBounce'
+        },
+        scales: {
+          r: {
+            angleLines: { color: '#444' },
+            grid: { color: '#333' },
+            pointLabels: { color: '#ccc', font: { size: 14 } },
+            ticks: {
+              color: '#ccc',
+              backdropColor: 'transparent',
+              stepSize: 1,
+              beginAtZero: true,
+              max: 10
+            }
+          }
+        },
+        plugins: {
+          legend: {
+            labels: { color: '#ccc', font: { size: 14 } }
+          }
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>
